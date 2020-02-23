@@ -1,5 +1,5 @@
 # Competing Consumers pattern  
-## Original: https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
+Original: https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
 
 Enable multiple concurrent consumers to process messages received on the same messaging channel. This enables a system to process multiple messages concurrently to optimize throughput, to improve scalability and availability, and to balance the workload.
 
