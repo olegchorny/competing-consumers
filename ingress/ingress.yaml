@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: publish
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:  
+  rules:  
+    - http:
+        paths:                
+        - backend:
+            serviceName: go-prom-app-service
+            servicePort: 8080
+          path: /publish(/|$)(.*)
+        - backend:
+            serviceName: prometheus-service
+            servicePort: 9090
+          path: /()(.*)
+
+## helm install nginx-default stable/nginx-ingress --namespace default --set controller.replicaCount=2 --set controller.metrics.enabled=true --set controller.podAnnotations."prometheus\.io/scrape"="true" --set controller.podAnnotations."prometheus\.io/port"="10254"
