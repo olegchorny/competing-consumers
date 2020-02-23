@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	//	"sync"
 	"time"
 
 	"github.com/go-redis/redis"
@@ -11,7 +10,6 @@ import (
 
 const redisListName = "access"
 
-//var once sync.Once
 var client *redis.Client
 
 func init() {

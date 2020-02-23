@@ -10,7 +10,7 @@ spec:
     - http:
         paths:                
         - backend:
-            serviceName: go-prom-app-service
+            serviceName: publisher-service
             servicePort: 8080
           path: /publish(/|$)(.*)
         - backend:
@@ -18,4 +18,3 @@ spec:
             servicePort: 9090
           path: /()(.*)
 
-## helm install nginx-default stable/nginx-ingress --namespace default --set controller.replicaCount=2 --set controller.metrics.enabled=true --set controller.podAnnotations."prometheus\.io/scrape"="true" --set controller.podAnnotations."prometheus\.io/port"="10254"

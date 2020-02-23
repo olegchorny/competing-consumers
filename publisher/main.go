@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-//	"sync"
 	"time"
 
 	"github.com/go-redis/redis"
@@ -24,7 +23,6 @@ var httpRequestsCounter = promauto.NewCounter(prometheus.CounterOpts{
 const redisCounterName = "access_count"
 const redisListName = "access"
 
-//var once sync.Once
 var client *redis.Client
 
 func init() {
